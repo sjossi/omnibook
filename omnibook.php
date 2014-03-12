@@ -20,7 +20,7 @@
 
 class ContentLoader
 {
-	private $currentFile = "habadahabada";
+	private $currentFile = "doc/welcome";
 
 	public function setCurrentFile(){
 		$this->currentFile = $_GET['dir'] . "/" . $_GET['file'] . ".html";
