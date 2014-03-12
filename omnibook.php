@@ -13,28 +13,32 @@
  * Maybe an in-browser markdown Editor could be used
  * Compile the files from within the browser
  *
+ *
  * @author Savino Jossi
  * @version 0.1
  */
 
 class ContentLoader
 {
-	// get currently selected file
-
 	private $currentFile = "habadahabada";
 
 	public function setCurrentFile(){
 		$this->currentFile = $_GET['dir'] . "/" . $_GET['file'] . ".html";
+		return 0;
 	}
 
 	public function getCurrentFile(){
-		$this->getCurrentFile();
-		echo $this->currentFile;
-		return $currentFile;
+		$this->setCurrentFile();
+		return "$this->currentFile";
 	}
+
+
+	public function getNavigation(){
+
+	}
+
 }
 
 $content = new ContentLoader();
-
 
 ?>

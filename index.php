@@ -19,9 +19,8 @@
 		<div class=content> 
 		<div class=markdown>
 			<?php 
-				#$currentFile = $content->getCurrentFile();
-				echo $currentFile;
-				include $currentFile;
+				$cur = $content->getCurrentFile();
+				include "$cur";
 			?>
 		</div> 
 		</div>
@@ -29,7 +28,7 @@
 
 		<div class=navigation> 
 		<?php 
-			//navigation();
+			getNavigation();
 		?>
 		</div>
 		</div>
