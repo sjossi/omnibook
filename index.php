@@ -11,7 +11,11 @@
 	<div class=container>
 		<div class=header>
 			<div id=title>Omnibook</div></ br>
-			<div id=toolbar>Home / Compile / Stuff</div>
+			<div id=toolbar>Home / 
+					Compile / 
+					<a href=index.php?dir=doc&file=welcome>
+					Welcome File</a>
+			</div>
 		</div>
 
 		<div class=main>

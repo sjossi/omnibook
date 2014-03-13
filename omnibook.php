@@ -21,6 +21,7 @@
 class ContentLoader
 {
 	private $currentFile = "doc/welcome";
+	private $currentDir = "doc";
 
 	public function setCurrentFile(){
 		$this->currentFile = $_GET['dir'] . "/" . $_GET['file'] . ".html";
@@ -32,9 +33,11 @@ class ContentLoader
 		return "$this->currentFile";
 	}
 
+	public function getFileList(){
+	}
 
 	public function getNavigation(){
-
+		$this->getFileList($currentDir);
 	}
 
 }
