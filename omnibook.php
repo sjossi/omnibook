@@ -23,8 +23,8 @@ class ContentLoader
 	private $currentFile = "doc/welcome";
 	private $currentDir = "doc";
 
-	public function setCurrentFile(){
-		$this->currentFile = $_GET['dir'] . "/" . $_GET['file'] . ".html";
+	private function setCurrentFile(){
+		$this->currentFile = $_GET['dir'] . "/" . $_GET['file'] . ".md";
 		return 0;
 	}
 
@@ -34,10 +34,26 @@ class ContentLoader
 	}
 
 	public function getFileList(){
+		$this->currentDir = $_GET['dir'];
+		$fileList = scandir($this->currentDir);
+		return $fileList;
 	}
 
 	public function getNavigation(){
-		$this->getFileList($currentDir);
+		$fileList = $this->getFileList();
+		foreach($fileList as $i){
+			$file_parts = pathinfo($i);
+			//echo $file_parts['filename']. "\n";
+			if($file_parts['extension'] == "html"){
+				print("<a href=index.php?dir=" . $this->currentDir . "&file=" . $file_parts['filename'] . ">\n");
+				print($file_parts['filename']);
+				print("</a><br>");
+			}
+			if($file_parts['extension'] == "html"){
+				// folder stuff
+			}
+		}
+		return 0;
 	}
 
 }
